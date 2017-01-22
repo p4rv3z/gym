@@ -1,7 +1,7 @@
 <?php
 include 'header.php';
 ?>
-<?php//content main body?>
+<?php//content member list?>
 <?php
 include 'footer.php';
 ?>

@@ -1,7 +1,7 @@
 <?php
 include 'header.php';
 ?>
-<?php//content main body?>
+<?php//content trainer list?>
 <?php
 include 'footer.php';
 ?>

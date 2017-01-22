@@ -41,7 +41,7 @@ include '../database_connection.php';
 			//data not found 
 			//user name not match
 			//todo
-			jumpto("admin.php");
+			//jumpto("admin.php");
 		}
 	}
 	function jumpto($url_name){
