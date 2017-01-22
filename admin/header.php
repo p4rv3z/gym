@@ -42,8 +42,8 @@ include '../database_connection.php';
 		header("Location: $url_name");
 	}
 	if (isset($_GET['logout'])) {
-	session_unset();
-	session_destroy();
+	unset($_SESSION['admin_user_name']);
+	unset($_SESSION['admin_password']);
 	jumpto("index.php");
 	exit;
  }
@@ -59,6 +59,7 @@ include '../database_connection.php';
 </header>
 <nav>
   <ul>
+    <li><a href="#">Galery</a></li>
     <li><a href="member_list.php">Member List</a></li>
     <li><a href="trainer_list.php">Trainer List</a></li>
     <li><a href="account.php">Account</a></li>

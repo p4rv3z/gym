@@ -32,7 +32,7 @@ include 'database_connection.php';
 				//save session
 				$_SESSION["user_name"] = $user_name;
 				$_SESSION["user_password"] = $user_password;
-				jumpto("user_activity.php");
+				jumpto("index.php");
 			}else{
 				//data found but password not match
 				//todo
@@ -41,7 +41,7 @@ include 'database_connection.php';
 			//data not found 
 			//user name not match
 			//todo
-			jumpto("user_activity.php");
+			jumpto("index.php");
 		}
 	}
 	function jumpto($url_name){
