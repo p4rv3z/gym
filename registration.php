@@ -61,7 +61,7 @@ if(isset($_POST['registration'])){
 ?>
 <form class="registration" autocomplete="on" method="POST" action="">
 	<h1>REGINTRATION:</h1>
-	<input type="user_email" name="user_email" value="<?php if(!empty($user_email))echo $user_email;?>" placeholder="E-mail ex. mail@mail.com"><p><?php echo $msg_email;?></p>
+	<input type="email" name="user_email" value="<?php if(!empty($user_email))echo $user_email;?>" placeholder="E-mail ex. mail@mail.com"><p><?php echo $msg_email;?></p>
 	<input type="username" name="user_name" value="<?php if(!empty($user_name)) echo $user_name;?>" placeholder="User Name ex. p4rv3z"><p><?php echo $msg_user_name;?></p>
 	<input type="password" name="user_password" placeholder="Password"><p><?php echo $msg_password;?></p>
 	<input type="password" name="re_user_password" placeholder="Re-Password"><p><?php echo $msg_password;?></p>
