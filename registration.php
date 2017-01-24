@@ -13,7 +13,7 @@ include 'database_connection.php';
 $msg_email = "";
 $msg_user_name = "";
 $msg_password = "";
-if(isset($_POST['registration'])){
+if(isset($_POST['next'])){
 	$user_email = trim($_POST['user_email']);
 	$user_name = trim($_POST['user_name']);
 	$user_password = trim($_POST['user_password']);
@@ -40,7 +40,7 @@ if(isset($_POST['registration'])){
 						$_SESSION["user_name"] = $user_name;
 						$_SESSION["user_password"] = $user_password;
 						//echo "Insert";
-						//
+						jumpto('user_profile.php');
 					}else{
 						//data insert failed
 						echo "failed";
@@ -58,6 +58,9 @@ if(isset($_POST['registration'])){
 	function my_query($sql){
 	return $GLOBALS['connection']->query($sql);
 	}
+	function jumpto($url_name){
+		header("Location: $url_name");
+	}
 ?>
 <form class="registration" autocomplete="on" method="POST" action="">
 	<h1>REGINTRATION:</h1>
@@ -65,7 +68,7 @@ if(isset($_POST['registration'])){
 	<input type="username" name="user_name" value="<?php if(!empty($user_name)) echo $user_name;?>" placeholder="User Name ex. p4rv3z"><p><?php echo $msg_user_name;?></p>
 	<input type="password" name="user_password" placeholder="Password"><p><?php echo $msg_password;?></p>
 	<input type="password" name="re_user_password" placeholder="Re-Password"><p><?php echo $msg_password;?></p>
-	<input type="submit" name="registration" value="REGINTRATION">
+	<input type="submit" name="next" value="Next">
 </form>
 </body>
 </html>

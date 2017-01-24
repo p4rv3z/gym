@@ -1,6 +1,5 @@
 <?php
 session_start();
-//require_once 'database_connection.php';
 include 'database_connection.php';
 ?>
 <!DOCTYPE html>
@@ -60,7 +59,7 @@ include 'database_connection.php';
 			$row2 = $result2->fetch_assoc();
 			$GLOBALS['name'] = "Mr. X";
 			$GLOBALS['user_name'] = $user_name;
-			$GLOBALS['user_image_path'] = "demo.png";
+			$GLOBALS['user_image_path'] = "default.png";
 			$GLOBALS['flag']=TRUE;
 		}
 	}
@@ -99,7 +98,7 @@ include 'database_connection.php';
         <ul class="dropdown-menu" style="text-align:right;">
           <li style="background-color:red;text-align:center;"><img src="images/<?php echo $user_image_path;?>" style="width:100px;height:100px; padding:5px" class="img-circle"><br><?php echo $user_name;?></li>
           <li><a href="#">Activities</a></li>
-          <li><a href="#">Profile</a></li>
+          <li><a href="user_profile.php">Profile</a></li>
           <li><a href="index.php?logout">Logout</a></li>
         </ul>
       </li>
