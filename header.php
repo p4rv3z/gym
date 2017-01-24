@@ -95,9 +95,9 @@ include 'database_connection.php';
 	  <?php
 	}else{
 	  ?>
-	  <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#"><?php  echo $name;?><img src="images/demo.png" style="width:25px;height:25px; padding:5px"><span class="caret"></span></a>
+	  <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#"><?php  echo $name;?><img src="images/<?php echo $user_image_path;?>" style="width:25px;height:25px; padding:5px"><span class="caret"></span></a>
         <ul class="dropdown-menu" style="text-align:right;">
-          <li style="background-color:red;text-align:center;"><img src="images/demo.png" style="width:100px;height:100px; padding:5px" class="img-circle"><br><?php echo $user_name;?></li>
+          <li style="background-color:red;text-align:center;"><img src="images/<?php echo $user_image_path;?>" style="width:100px;height:100px; padding:5px" class="img-circle"><br><?php echo $user_name;?></li>
           <li><a href="#">Activities</a></li>
           <li><a href="#">Profile</a></li>
           <li><a href="index.php?logout">Logout</a></li>

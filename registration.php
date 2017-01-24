@@ -6,7 +6,7 @@ include 'database_connection.php';
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Home</title>
+	<title>Registration</title>
 </head>
 <body>
 <?php
