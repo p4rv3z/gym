@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 22, 2017 at 12:01 PM
+-- Generation Time: Jan 25, 2017 at 12:53 PM
 -- Server version: 10.1.16-MariaDB
 -- PHP Version: 7.0.9
 
@@ -60,9 +60,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `user_email`, `user_name`, `user_password`) VALUES
-(1, 'md.parvez28@gmail.com', 'p4rv3z', '*#p4rv3z#'),
-(2, 'md.parvez28@yahoo.com', 'parvez', '*#p4rv3z#'),
-(3, 'sojib@live.com', 'sojib', 'sojib123');
+(1, 'md.parvez28@gmail.com', 'p4rv3z', '*#p4rv3z#');
 
 -- --------------------------------------------------------
 
@@ -76,9 +74,16 @@ CREATE TABLE `users_information` (
   `contact_number` varchar(14) NOT NULL,
   `date_of_birth` date NOT NULL,
   `gender` varchar(6) NOT NULL,
-  `image_path` varchar(100) NOT NULL,
+  `image_path` varchar(100) NOT NULL DEFAULT 'default.png',
   `address` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `users_information`
+--
+
+INSERT INTO `users_information` (`user_name`, `name`, `contact_number`, `date_of_birth`, `gender`, `image_path`, `address`) VALUES
+('p4rv3z', 'Muhammad Harun-Or-Roshid', '01670129830', '1994-04-28', 'Male', 'parvez.jpg', 'Mirpur');
 
 --
 -- Indexes for dumped tables
@@ -121,7 +126,7 @@ ALTER TABLE `admin`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(32) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(32) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
