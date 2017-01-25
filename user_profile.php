@@ -9,6 +9,7 @@ $msg_contact_number = "";
 $msg_date_of_birth ="";
 $msg_address = "";
 if (!empty($user_name)) {
+	
 		$sql = "SELECT * FROM `users_information` WHERE `user_name`='$user_name'";
 		$result = $GLOBALS['connection']->query($sql);
 		if ($result->num_rows==1) {
@@ -28,6 +29,7 @@ if (!empty($user_name)) {
 		if(isset($_FILES['fupload'])){
 			$file_name = $_FILES['fupload']['name'];
 			$file_type = $_FILES['fupload']['type'];
+			$image_path = $file_name;
 			if(!is_dir ($upload_dir )){
 			mkdir($upload_dir);
 			}
@@ -35,13 +37,24 @@ if (!empty($user_name)) {
 			$copy_to = "$upload_dir/$file_name";
 			$t = copy($_FILES['fupload']['tmp_name'], $copy_to) or die("Couldn't copy!");
 				if($t){
-					$image_path = $file_name;
-					//header("refresh: 0;");
+					if ($flag) {
+						//update	
+						$sql3 = "UPDATE `users_information` SET `image_path`='$image_path' WHERE `user_name`='$user_name'";
+					}else{
+						//insert
+						$sql3 = "INSERT INTO `users_information`(`user_name`,`image_path`) VALUES ('$user_name', '$image_path')";
+					}
+					$result3 = $GLOBALS['connection']->query($sql3);
+					if ($result3 === TRUE) {
+						header("refresh: 0;");
+					}else{
+						echo "Image update or insert failed.";
+					}
 				}else{
-					echo "db error42";
+					echo "Failed to copie image";
 				}
 			}else{
-			echo "Images Type Error";
+				echo "Images Type Error";
 			}
 		}
 		if (isset($_POST['save'])) {
@@ -53,10 +66,10 @@ if (!empty($user_name)) {
 			$address = $_POST['address'];
 			if ($flag) {
 				//update	
-				$sql2 = "UPDATE `users_information` SET `name`='$name',`contact_number`='$contact_number',`date_of_birth`='$date_of_birth',`gender`='$gender',`image_path`='$image_path',`address`='$address' WHERE `user_name` = '$user_name'";
+				$sql2 = "UPDATE `users_information` SET `name`='$name',`contact_number`='$contact_number',`date_of_birth`='$date_of_birth',`gender`='$gender',`address`='$address' WHERE `user_name` = '$user_name'";
 			}else{
 				//insert
-				$sql2 = "INSERT INTO `users_information`(`user_name`, `name`, `contact_number`, `date_of_birth`, `gender`, `image_path`, `address`) VALUES ('$user_name','$name','$contact_number','$date_of_birth','$gender','$image_path','$address')";
+				$sql2 = "INSERT INTO `users_information`(`user_name`, `name`, `contact_number`, `date_of_birth`, `gender`, `address`) VALUES ('$user_name','$name','$contact_number','$date_of_birth','$gender','$address')";
 			}
 			$result2 = $GLOBALS['connection']->query($sql2);
 			if ($result2 === TRUE) {
