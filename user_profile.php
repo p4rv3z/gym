@@ -3,6 +3,7 @@ include 'user_header.php';
 ?>
 <?php
 $flag = false;
+$flag2 = false;
 $upload_dir = "images";
 $msg_name = "";
 $msg_contact_number = "";
@@ -20,6 +21,7 @@ if (!empty($user_name)) {
 			$date_of_birth = $row['date_of_birth'];
 			$gender = $row['gender'];
 			$address = $row['address'];
+			if(!empty($name)){$flag2 = true;}
 			$image_path = $row['image_path'];
 			}else{
 				$flag = false;
@@ -29,7 +31,7 @@ if (!empty($user_name)) {
 		if(isset($_FILES['fupload'])){
 			$file_name = $_FILES['fupload']['name'];
 			$file_type = $_FILES['fupload']['type'];
-			$image_path = $file_name;
+			$image_path = trim($file_name);
 			if(!is_dir ($upload_dir )){
 			mkdir($upload_dir);
 			}
@@ -126,7 +128,7 @@ if (!empty($user_name)) {
 			</tr>
 			<tr>
 				<td>
-					<input type="submit" name="save" value="<?php if($flag==1){echo 'Update';}else{echo 'Save';}?>">
+					<input type="submit" name="save" value="<?php if($flag2==1){echo 'Update';}else{echo 'Save';}?>">
 				</td>
 			</tr>
 		</table>
