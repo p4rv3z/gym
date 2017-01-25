@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 25, 2017 at 12:53 PM
+-- Generation Time: Jan 25, 2017 at 07:11 PM
 -- Server version: 10.1.16-MariaDB
 -- PHP Version: 7.0.9
 
@@ -60,7 +60,11 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `user_email`, `user_name`, `user_password`) VALUES
-(1, 'md.parvez28@gmail.com', 'p4rv3z', '*#p4rv3z#');
+(11, 'jashim@yahoo.com', 'jashim', '123456'),
+(12, 'firoj@hotmail.com', 'firoj', '123456'),
+(13, 'sudip@gmail.com', 'sudip', '123456'),
+(14, 'nila@live.com', 'nila', '123456'),
+(16, 'tuni@gamil.com', 'tuni', '123456');
 
 -- --------------------------------------------------------
 
@@ -83,7 +87,11 @@ CREATE TABLE `users_information` (
 --
 
 INSERT INTO `users_information` (`user_name`, `name`, `contact_number`, `date_of_birth`, `gender`, `image_path`, `address`) VALUES
-('p4rv3z', 'Muhammad Harun-Or-Roshid', '01670129830', '1994-04-28', 'Male', 'parvez.jpg', 'Mirpur');
+('firoj', 'Firoj Khan', '01749999444', '1990-01-01', 'Male', 'person_3.jpg', 'House 543, Road 12, Rome, Italy'),
+('jashim', 'Jashim Uddin', '01821666333', '1971-01-01', 'Male', 'person_2.jpg', 'House 3, Road 34, Berlin, Germany'),
+('nila', 'Nilanjona Nila', '01991144888', '1996-01-01', 'Female', 'person_5.jpg', 'House 35, Road 1, Rangpur, Bangladesh'),
+('sudip', 'Sudip Sarker', '01771155999', '1992-01-01', 'Male', 'person_4.jpg', 'House 32, Road 5, London, UK'),
+('tuni', 'Tun Tuni', '01711122211', '1994-01-01', 'Female', 'person_1.jpg', 'House 5, Road 2, Washington, D.C., USA');
 
 --
 -- Indexes for dumped tables
@@ -126,7 +134,7 @@ ALTER TABLE `admin`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(32) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(32) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
